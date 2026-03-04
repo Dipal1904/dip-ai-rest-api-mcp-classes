@@ -72,7 +72,7 @@ mcp_sse_app = mcp.http_app(path="/", transport="sse")
 # Ensure FastAPI runs the MCP lifespan so streamable-http initializes properly
 app.router.lifespan_context = mcp_http_app.lifespan
 
-app.mount("/mcp", mcp_http_app)
+# app.mount("/mcp", mcp_http_app)
 app.mount("/sse", mcp_sse_app)
 
 

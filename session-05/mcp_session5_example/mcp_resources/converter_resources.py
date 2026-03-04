@@ -3,16 +3,41 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import json
+
+# def unit_reference() -> Dict[str, Any]:
+#     """
+#     JSON cheatsheet of supported conversions, formulas, and sample IO.
+
+#     Returns:
+#         Dictionary describing conversions, formulas, and examples.
+#     """
+#     return {
+#         "id": "unit-converter-cheatsheet",
+#         "title": "Unit Converter Cheatsheet",
+#         "supported": {
+#             "temperature": {
+#                 "celsius_to_fahrenheit": {"formula": "(°C × 9/5) + 32", "example": {"input": 25, "output": 77}},
+#                 "fahrenheit_to_celsius": {"formula": "(°F − 32) × 5/9", "example": {"input": 86, "output": 30}},
+#             },
+#             "distance": {
+#                 "kilometers_to_miles": {"formula": "km × 0.621371", "example": {"input": 5, "output": 3.106855}},
+#                 "miles_to_kilometers": {"formula": "mi ÷ 0.621371", "example": {"input": 3.1, "output": 4.98895}},
+#             },
+#         },
+#         "notes": [
+#             "Negative distances are rejected to keep results meaningful.",
+#             "Temperature conversions accept any real number.",
+#         ],
+#     }
 
 
-def unit_reference() -> Dict[str, Any]:
+
+def unit_reference() -> str:
     """
     JSON cheatsheet of supported conversions, formulas, and sample IO.
-
-    Returns:
-        Dictionary describing conversions, formulas, and examples.
     """
-    return {
+    data = {
         "id": "unit-converter-cheatsheet",
         "title": "Unit Converter Cheatsheet",
         "supported": {
@@ -30,6 +55,7 @@ def unit_reference() -> Dict[str, Any]:
             "Temperature conversions accept any real number.",
         ],
     }
+    return json.dumps(data, indent=2)
 
 
 def troubleshooting_guide() -> str:
