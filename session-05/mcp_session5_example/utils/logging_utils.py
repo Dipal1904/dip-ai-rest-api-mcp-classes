@@ -21,8 +21,7 @@ def build_log_config(
     log_file: Path | str
         Destination log file; parent directories are created automatically.
     logger_handlers: Mapping[str, Sequence[str]] | None
-        Optional mapping of logger name -> handler names. If omitted, no named
-        loggers are configured beyond the root logger.
+        Optional mapping of logger name -> handler names. Default: root logger.
     console: bool
         Whether to also log to stdout via ``logging.StreamHandler``.
     root_level: str
